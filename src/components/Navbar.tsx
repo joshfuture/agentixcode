@@ -7,12 +7,14 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="fixed w-full bg-gray-900/90 backdrop-blur-sm z-50 py-4">
+    <nav className="fixed w-full bg-gray-900/90 backdrop-blur-sm z-50 py-4 border-b border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
-            <span className="text-xl font-bold">AgentixCode</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg animate-pulse"></div>
+            <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              AgentixCode
+            </span>
           </div>
           <div className="hidden md:flex space-x-8">
             <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
@@ -31,7 +33,7 @@ const Navbar = () => {
 
         {/* Mobile menu dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-gray-900 border-t border-gray-800 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-sm border-t border-gray-800 shadow-lg">
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               <a 
                 href="#services" 
