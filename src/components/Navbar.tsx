@@ -24,48 +24,57 @@ const Navbar = () => {
           </div>
           <button 
             onClick={toggleMenu}
-            className="md:hidden p-2 hover:bg-gray-800 rounded-lg transition-colors"
+            className="md:hidden p-3 hover:bg-gray-800 rounded-lg transition-colors flex items-center gap-2"
             aria-label="Toggle menu"
           >
+            <span className="text-sm font-medium">Menu</span>
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile menu dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-sm border-t border-gray-800 shadow-lg">
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              <a 
-                href="#services" 
-                className="text-lg px-4 py-2 hover:bg-gray-800 rounded-lg transition-colors"
-                onClick={toggleMenu}
-              >
-                Services
-              </a>
-              <a 
-                href="#about" 
-                className="text-lg px-4 py-2 hover:bg-gray-800 rounded-lg transition-colors"
-                onClick={toggleMenu}
-              >
-                About
-              </a>
-              <a 
-                href="#portfolio" 
-                className="text-lg px-4 py-2 hover:bg-gray-800 rounded-lg transition-colors"
-                onClick={toggleMenu}
-              >
-                Portfolio
-              </a>
-              <a 
-                href="#contact" 
-                className="text-lg px-4 py-2 hover:bg-gray-800 rounded-lg transition-colors"
-                onClick={toggleMenu}
-              >
-                Contact
-              </a>
+        <div 
+          className={`md:hidden fixed left-0 right-0 top-[73px] transition-all duration-300 ease-in-out ${
+            isMenuOpen 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 -translate-y-4 pointer-events-none'
+          }`}
+        >
+          <div className="bg-gray-900 shadow-lg border-t border-gray-800">
+            <div className="container mx-auto py-4 px-4">
+              <div className="flex flex-col space-y-2">
+                <a 
+                  href="#services" 
+                  className="text-lg font-medium px-6 py-4 hover:bg-gray-800 rounded-lg transition-all hover:pl-8"
+                  onClick={toggleMenu}
+                >
+                  Services
+                </a>
+                <a 
+                  href="#about" 
+                  className="text-lg font-medium px-6 py-4 hover:bg-gray-800 rounded-lg transition-all hover:pl-8"
+                  onClick={toggleMenu}
+                >
+                  About
+                </a>
+                <a 
+                  href="#portfolio" 
+                  className="text-lg font-medium px-6 py-4 hover:bg-gray-800 rounded-lg transition-all hover:pl-8"
+                  onClick={toggleMenu}
+                >
+                  Portfolio
+                </a>
+                <a 
+                  href="#contact" 
+                  className="text-lg font-medium px-6 py-4 hover:bg-gray-800 rounded-lg transition-all hover:pl-8"
+                  onClick={toggleMenu}
+                >
+                  Contact
+                </a>
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
