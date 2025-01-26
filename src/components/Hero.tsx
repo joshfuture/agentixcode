@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  useEffect(() => {
+    console.log('Hero component mounted');
+  }, []);
+
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 z-0" />

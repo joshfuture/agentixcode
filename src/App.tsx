@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 const App = () => {
   useEffect(() => {
     console.log('App component mounted');
+    console.log('Rendering App with:', { Navbar: !!Navbar, Hero: !!Hero });
   }, []);
 
   return (
