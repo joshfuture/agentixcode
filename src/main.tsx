@@ -7,6 +7,8 @@ console.log('Main.tsx is executing');
 
 const container = document.getElementById('root');
 console.log('Root element found:', !!container);
+console.log('Root element styles:', container?.style);
+console.log('Root element dimensions:', container?.getBoundingClientRect());
 
 if (container) {
   const root = ReactDOM.createRoot(container);

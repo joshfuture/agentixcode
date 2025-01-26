@@ -4,6 +4,11 @@ import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   useEffect(() => {
     console.log('Hero component mounted');
+    console.log('Hero section dimensions:', {
+      element: document.querySelector('section')?.getBoundingClientRect(),
+      containerVisible: !!document.querySelector('.container'),
+      textVisible: !!document.querySelector('h1')
+    });
   }, []);
 
   return (

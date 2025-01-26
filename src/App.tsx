@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
 console.log('App component loaded');
 
 const App: React.FC = () => {
+  useEffect(() => {
+    console.log('App mounted with dimensions:', {
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight,
+      documentHeight: document.documentElement.scrollHeight
+    });
+  }, []);
+
   console.log('App component rendering');
   
   return (
